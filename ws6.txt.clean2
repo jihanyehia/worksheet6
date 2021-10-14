@@ -1,0 +1,146 @@
+Script started on 2021-10-14 22:19:18+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="197" LINES="52"]
+]0;yehia@f6linuxA9: ~/worksheet6yehia@f6linuxA9:~/worksheet6$ 
+]0;yehia@f6linuxA9: ~/worksheet6yehia@f6linuxA9:~/worksheet6$ mkdir PRODUCTS
+]0;yehia@f6linuxA9: ~/worksheet6yehia@f6linuxA9:~/worksheet6$ 
+]0;yehia@f6linuxA9: ~/worksheet6yehia@f6linuxA9:~/worksheet6$ export DATETIME=`date "+%Y%m%d_%H%M%S"`
+]0;yehia@f6linuxA9: ~/worksheet6yehia@f6linuxA9:~/worksheet6$ 
+]0;yehia@f6linuxA9: ~/worksheet6yehia@f6linuxA9:~/worksheet6$ cp ../assignment2/PRODUCTS/043935806X.txt PRODUCTS/043935806X.$DATETIME.txt
+]0;yehia@f6linuxA9: ~/worksheet6yehia@f6linuxA9:~/worksheet6$ 
+]0;yehia@f6linuxA9: ~/worksheet6yehia@f6linuxA9:~/worksheet6$ ls PRODUCTS/
+043935806X.20211014_222008.txt
+]0;yehia@f6linuxA9: ~/worksheet6yehia@f6linuxA9:~/worksheet6$ 
+]0;yehia@f6linuxA9: ~/worksheet6yehia@f6linuxA9:~/worksheet6$ cd PRODUCTS
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ vi 043935806X.20211014_222008.txt 
+5[7C0
+5[7C1
+4[7C1
+5[7C1
+1[7C13
+4[7C0
+5[7C1
+5[7C1
+5[7C0
+2[7C2
+5[7C0
+5[7C1
+4[7C2
+5[7C0
+5[7C1
+5[7C1
+4[7C0
+4[7C0
+3[7C1
+5[7C1
+3[7C1
+3[7C2
+4[7C0
+5[7C0
+5[7C1
+5[7C1
+2[7C1
+5[7C2
+5[7C4
+5[7C2
+5[7C1
+5[7C0
+4[7C1
+5[7C1
+5[7C0
+5[7C3
+5[7C2
+4[7C0
+3[7C2
+5[7C0
+5[7C4
+5[7C6
+4[7C1
+4[7C1
+5[7C1
+5[7C0
+3[7C2
+5[7C0
+5[7C3
+5[7C0[52;180H1,1[11CTop[1;1H[?25h[?25l[52;170HG[1;1H[52;170H [51;1H[H[2J[1;1H5[7C0
+5[7C0
+5[7C2
+5[7C0
+5[7C0
+5[7C0
+5[7C2
+5[7C7
+5[7C0
+5[7C0
+1[7C2
+4[7C3
+4[7C0
+4[7C1
+5[7C0
+3[7C1
+5[7C4
+5[7C1
+4[7C0
+5[7C1
+5[7C0
+5[7C1
+5[7C1
+5[7C5
+1[7C4
+5[7C1
+5[7C0
+5[7C0
+5[7C3
+5[7C6
+4[7C0
+5[7C0
+5[7C0
+5[7C0
+5[7C0
+5[7C0
+5[7C0
+5[7C8
+4[7C1
+5[7C1
+5[7C3
+5[7C1
+3[7C2
+5[7C5
+3[7C5
+5[7C0
+5[7C0
+3[7C2
+4[7C0
+5[7C0
+-- INSERT --
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ 
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ ln -s 043935806X.20211014_222008.txt 043935806X.LATEST.txt
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ 
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ ls -latr
+total 28
+drwxrwxr-x 3 yehia yehia  4096 Oct 14 22:19 ..
+-rw-rw-r-- 1 yehia yehia 18668 Oct 14 22:22 043935806X.20211014_222008.txt
+lrwxrwxrwx 1 yehia yehia    30 Oct 14 22:26 043935806X.LATEST.txt -> 043935806X.20211014_222008.txt
+drwxrwxr-x 2 yehia yehia  4096 Oct 14 22:26 .
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ 
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ vi cronfile
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ 
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ crontab cronfile 
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ 
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ crontab -l
+* * * * * awk 'BEGIN { total = 0 } { total += $1 } END { print total/NR }' ~/worksheet6/PRODUCTS/043935806X.LATEST.txt >  ~/worksheet6/PRODUCTS/043935806X.AVGRATING.txt 2>&1
+
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ ls -latr
+total 36
+drwxrwxr-x 3 yehia yehia  4096 Oct 14 22:19 ..
+-rw-rw-r-- 1 yehia yehia 18668 Oct 14 22:22 043935806X.20211014_222008.txt
+lrwxrwxrwx 1 yehia yehia    30 Oct 14 22:26 043935806X.LATEST.txt -> 043935806X.20211014_222008.txt
+-rw-rw-r-- 1 yehia yehia   175 Oct 14 22:27 cronfile
+drwxrwxr-x 2 yehia yehia  4096 Oct 14 22:29 .
+-rw-rw-r-- 1 yehia yehia     8 Oct 14 22:29 043935806X.AVGRATING.txt
+
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ 
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ cat 043935806X.AVGRATING.txt 
+4.39287
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ 
+]0;yehia@f6linuxA9: ~/worksheet6/PRODUCTSyehia@f6linuxA9:~/worksheet6/PRODUCTS$ exit
+
+Script done on 2021-10-14 22:29:32+00:00 [COMMAND_EXIT_CODE="0"]
